@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr" class="transition-colors duration-500 scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aymen Bernoussi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+
+        .dark .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #1f2937, #111827);
+        }
+
+        .dark .text-indigo-700 {
+            color: #93c5fd;
+        }
+
+        .dark .text-gray-700 {
+            color: #e5e7eb;
+        }
+
+        .dark .bg-gray-100 {
+            background-color: #1f2937;
+        }
+
+        .dark .bg-indigo-100 {
+            background-color: #374151;
+        }
+
+        .dark .bg-green-100 {
+            background-color: #065f46;
+        }
+
+        .dark details.bg-gray-100 {
+            background-color: #374151;
+        }
+
+        .dark details.bg-gray-100 summary {
+            color: #93c5fd;
+        }
+    </style>
+    <!-- <script>
+        // Check for system preference on load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark'); // Enable dark mode by default if system prefers dark
+        }
+    </script> -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script>
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const button = document.getElementById('darkModeToggle');
+            html.classList.toggle('dark');
+
+            if (html.classList.contains('dark')) {
+                button.textContent = '🌞'; // Soleil = retour au light mode
+            } else {
+                button.textContent = '🌙'; // Lune = passer au dark mode
+            }
+        }
+
+        // Init selon mode actuel (utile si dark est activé dès le début)
+        window.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const button = document.getElementById('darkModeToggle');
+            button.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+        });
+    </script>
+</head>
+
+<body class="transition-colors duration-500 bg-white text-black">
+
+    <!-- Barre de navigation -->
+    <header class="fixed top-0 left-0 right-0">
+        <nav class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-indigo-700 text-xl">E-Portfolio</div>
+            <ul class="flex gap-4 text-sm font-medium">
+                <li><a href="#accueil"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Accueil</a>
+                </li>
+                <li><a href="#introduction"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Introduction</a>
+                </li>
+                <li><a href="#parcours"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Parcours</a>
+                </li>
+                <li><a href="#experiences"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Expériences</a>
+                </li>
+                <li><a href="#competences"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Compétences</a>
+                </li>
+                <li><a href="#projet"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Projet</a>
+                </li>
+                <li><a href="#conclusion"
+                        class="text-black dark:text-gray-100 hover:text-indigo-500 dark:hover:text-indigo-400">Conclusion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="fixed top-4 right-4 mt-14 z-50">
+        <button onclick="toggleDarkMode()" id="darkModeToggle"
+            class="p-3 bg-indigo-700 text-white rounded-full hover:bg-indigo-800 transition text-xl">
+            🌙
+        </button>
+    </div>
+
+    <main class="pt-24">
+
+        <section id="accueil"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-200 via-white to-indigo-100 p-20 transition duration-700 ease-in-out">
+            <div class="text-center">
+                <h1 class="text-5xl font-extrabold mb-4 text-indigo-700">Bienvenue sur mon E-Portfolio</h1>
+                <p class="text-xl text-gray-700 max-w-2xl mx-auto">Découvrez mes compétences, mes expériences et mes
+                    aspirations professionnelles à travers ce portfolio interactif.</p>
+            </div>
+        </section>
+
+        <section id="introduction"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-white to-indigo-100 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-3xl font-semibold mb-6 text-center text-indigo-700">Introduction</h2>
+                <p class="text-left text-xl leading-relaxed text-gray-700">
+                    Issu d’un parcours en classe préparatoire, j’ai poursuivi mes études en école d’ingénieur avec une
+                    spécialisation en calcul haute performance (HPC) et big data. Aujourd’hui en poste en tant que Data
+                    Scientist MLOps, j’ai choisi de compléter ma formation technique par une licence en économie et
+                    gestion: parcours gestion des entreprises. Mon profil mêle ainsi rigueur scientifique, compétences
+                    en ingénierie de l’IA et vision stratégique de la gestion. Ce e-portfolio présente mes expériences,
+                    mes compétences clés et les ambitions qui me guident : manager une équipe d’ingénieurs IA et, à
+                    terme, porter un projet entrepreneurial à fort impact.
+
+                </p>
+                <p class="text-center text-lg mt-6 mb-2 text-gray-700 italic">Voici une courte vidéo d'introduction :
+                </p>
+                <div class="w-full aspect-video rounded-xl shadow mb-4">
+  <iframe
+    class="w-full h-full rounded-xl"
+    src="https://www.youtube.com/embed/u3ng0B9wFQM?si=wv0HwKoLwrdz1pMT"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+                <!-- <iframe  class="w-full max-h-[600px] rounded-xl shadow mb-4"
+                src="https://www.youtube.com/embed/u3ng0B9wFQM?si=wv0HwKoLwrdz1pMT"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <details class="bg-gray-100 p-4 rounded-xl shadow text-xl">
+                    <summary class="cursor-pointer font-semibold text-indigo-700">📄 Transcription</summary>
+                    <div class="mt-2 text-gray-700">
+                        <p>Bonjour, je m'appelle Aymen Bernoussi. Merci de prendre le temps de découvrir mon
+                            e-portfolio. À travers cette vidéo, je vais vous présenter mon parcours, mes objectifs
+                            professionnels, et ce qui m’anime au quotidien.</p><br>
+
+                        <p>Mon chemin a commencé par deux années de classe préparatoire au Maroc, qui m'ont donné une
+                            solide base
+                            scientifique et une méthodologie de travail rigoureuse. J’ai ensuite intégré une école
+                            d’ingénieur avec une spécialisation en calcul haute performance et big data, un domaine qui
+                            m’a permis de plonger
+                            en profondeur dans les problématiques de traitement de données à grande échelle.</p><br>
+
+                        <p>Aujourd’hui, je suis en CDI en tant que Data Scientist MLOps, ce qui me permet de
+                            combiner analyse de données, industrialisation de modèles d'IA, et déploiement dans des
+                            environnements complexes.</p><br>
+
+                        <p>Convaincu que la maîtrise technique n’est complète que lorsqu’elle s’accompagne d’une vision
+                            stratégique, j’ai fait le choix de reprendre en parallèle une licence en économie et
+                            gestion. Cela me permet d’appréhender les enjeux organisationnels, financiers et humains
+                            avec une perspective plus globale et plus managériale.</p><br>
+
+                        <p>Mon ambition à moyen terme est de manager une équipe d’ingénieurs spécialisés en IA et en
+                            data science. Je souhaite, dans ce cadre là, être en mesure de structurer des projets à fort
+                            impact et faire le lien entre la technique et la stratégie
+                            d’entreprise.</p><br>
+
+                        <p>À plus long terme, je me projette également dans l'entrepreneuriat, avec la volonté de créer
+                            un projet technologique à forte valeur ajoutée, à la croisée de l'IA, de l'impact social
+                            et de l'innovation.</p><br>
+
+                        <p>Je vous invite à explorer les différentes sections de cet e-portfolio pour en savoir plus sur
+                            mes projets, mes expériences, et mes ambitions.</p><br>
+
+                        <p>Merci pour votre attention.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section id="parcours"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-100 via-white to-indigo-200 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-3xl font-semibold mb-4 text-center text-indigo-700">Parcours Académique et CV</h2>
+                <div class="space-y-6 text-left text-xl leading-relaxed text-gray-700">
+                    <div class="p-4 bg-gray-100 rounded-xl shadow">
+                        <h3 class="text-2xl font-semibold text-indigo-700">CPGE Moulay Youssef (2017-2019)</h3>
+                        <p>Mon parcours académique débute au Maroc, où j’ai intégré les
+                            classes préparatoires aux écoles d'ingénieurs MP Moulay Youssef à Rabat. Cette formation m’a
+                            permis d’acquérir une rigueur
+                            scientifique solide, une capacité d’analyse développée et une méthode de travail structurée.
+                        </p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-xl shadow">
+                        <h3 class="text-2xl font-semibold text-indigo-700">ENSEEIHT (2019-2022)</h3>
+                        <p>À l’issue de ces deux années, j’ai rejoint l’INP ENSEEIHT à Toulouse, au sein du département
+                            de sciences numériques. J’y ai choisi de me spécialiser en calcul haute performance (HPC) et
+                            big data, une filière au croisement de l’informatique avancée, des mathématiques appliquées
+                            et des technologies de traitement de données à grande échelle. Mon cursus a été enrichi par
+                            deux stages significatifs : l’un à l’IRIT, dans le domaine de la recherche en Machine
+                            Learning, et l’autre chez Stellia, où j’ai travaillé en tant que NLP Data Scientist sur des
+                            problématiques concrètes d’analyse de langage naturel.</p>
+                    </div>
+                    <div class="p-4 bg-gray-100 rounded-xl shadow">
+                        <h3 class="text-2xl font-semibold text-indigo-700">Université Paris-Saclay (2023-2025)</h3>
+                        <p>Convaincu de l’importance de l’interdisciplinarité dans le monde professionnel, j’ai fait le
+                            choix de compléter cette formation technique par une licence en économie et gestion –
+                            parcours gestion des entreprises – à l’Université Paris-Saclay. Cette démarche me permet
+                            d’acquérir des compétences en management, en stratégie d’entreprise et en pilotage de
+                            projets, pour mieux articuler les enjeux technologiques et économiques.</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <a href="https://drive.google.com/uc?export=download&id=1O4bwIX2CUhivdyqEkVGvy3W0l_AMxUwy" target="_blank">
+                <button class="block mx-auto px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+                    Télécharger le CV
+                </button>
+            </a>
+            </div>
+        </section>
+
+        <section id="experiences"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-white to-indigo-100 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-3xl font-semibold mb-4 text-center text-indigo-700">Expériences Professionnelles</h2>
+                <div class="space-y-6 text-left text-xl leading-relaxed text-gray-700">
+                    <div class="relative w-full max-w-4xl mx-auto">
+                        <!-- Carrousel -->
+                        <div id="experience-carousel" class="relative overflow-hidden w-full">
+                            <div id="carousel-inner" class="flex transition-transform duration-500 ease-in-out"
+                                style="transform: translateX(0%)">
+                                <!-- Carte 1 -->
+                                <div class="w-full flex-shrink-0 p-6">
+                                    <div class="p-6 bg-gray-100 rounded-xl shadow space-y-4 w-full">
+                                        <h3 class="text-2xl font-semibold text-indigo-700">Stage à l’IRIT - Toulouse
+                                            (2021)</h3>
+                                        <p class="text-xl text-gray-700">
+                                            Dans le cadre de ma spécialisation à l’ENSEEIHT, j’ai réalisé un stage de
+                                            recherche à l’Institut de Recherche en Informatique de Toulouse (IRIT). Mon
+                                            travail a porté sur l’application de techniques de Machine Learning à la
+                                            correction automatique de copies d’élèves. Cette expérience m’a permis de me
+                                            familiariser avec les méthodologies de recherche appliquée, d’approfondir
+                                            mes compétences en traitement de données, et de développer des solutions en
+                                            R et Python. Elle m’a également offert une première immersion dans le monde
+                                            de la recherche académique, en collaboration étroite avec des chercheurs
+                                            spécialisés en intelligence artificielle.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Carte 2 -->
+                                <div class="w-full flex-shrink-0 p-6">
+                                    <div class="p-6 bg-gray-100 rounded-xl shadow space-y-4 w-full">
+                                        <h3 class="text-2xl font-semibold text-indigo-700">Projet Nimble One (2022)</h3>
+                                        <p class="text-xl text-gray-700">
+                                            Ce projet a été réalisé dans le cadre de mon parcours académique, en
+                                            collaboration avec l’entreprise Nimble One. En équipe de quatre étudiants,
+                                            nous avons travaillé pendant près de deux mois sur la problématique de la
+                                            ré-identification d’objets du quotidien à partir d’images, en utilisant des
+                                            approches de vision par ordinateur et des réseaux de neurones profonds (deep
+                                            learning).
+                                            <br><br>
+                                            Encadré à la fois par un tuteur académique et un référent de l’entreprise,
+                                            le projet a fait l’objet d’un suivi hebdomadaire rigoureux. Il nous a permis
+                                            d’explorer différentes architectures de modèles de classification et de mise
+                                            en correspondance d’images, tout en développant une solution appliquée à des
+                                            cas concrets, en lien direct avec les besoins industriels.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Carte 3 -->
+                                <div class="w-full flex-shrink-0 p-6">
+                                    <div class="p-6 bg-gray-100 rounded-xl shadow space-y-4 w-full">
+                                        <h3 class="text-2xl font-semibold text-indigo-700">Stage Stellia - NLP (2022)
+                                        </h3>
+                                        <p class="text-xl text-gray-700">
+                                            Lors de ce stage, j’ai intégré l’équipe Data Science de Stellia afin de
+                                            travailler sur des problématiques d’extraction de connaissances à partir de
+                                            textes. Mon travail a porté sur le développement de modèles de traitement
+                                            automatique du langage naturel (NLP) pour identifier les passages les plus
+                                            pertinents dans de larges corpus de données textuelles.
+                                            <br><br>
+                                            J’ai conçu des pipelines complètes pour l’extraction de données depuis
+                                            différentes sources (Wikipedia, Coursera, etc.), leur transformation et leur
+                                            stockage dans des environnements cloud (AWS). Une partie de mes missions a
+                                            également consisté à améliorer une librairie open-source pour l’extraction
+                                            automatique de mots-clés significatifs, et à développer un modèle de
+                                            filtrage pour écarter les questions non pertinentes dans le cadre de
+                                            systèmes de question-réponse.
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Carte 4 -->
+                                <div class="w-full flex-shrink-0 p-6">
+                                    <div class="p-6 bg-gray-100 rounded-xl shadow space-y-4 w-full">
+                                        <h3 class="text-2xl font-semibold text-indigo-700">CDI Stellia – Data Scientist
+                                            MLOps
+                                            (2022–Présent)</h3>
+                                        <p class="text-xl text-gray-700">
+                                            En tant que Data Scientist MLOps chez Stellia, je participe au développement
+                                            de solutions avancées basées sur le NLP et les LLMs. J’ai notamment
+                                            travaillé sur l’optimisation de modèles d’embedding pour un système de
+                                            <strong>Retrieval-Augmented Generation (RAG)</strong>, visant à renforcer la
+                                            précision et la pertinence des réponses générées par les modèles.
+                                        </p>
+                                        <ul class="list-disc pl-5 text-xl text-gray-700 space-y-1">
+                                            <li>Conception et déploiement de pipelines de parsing automatisés pour
+                                                l’extraction et la structuration de données issues de sources variées.
+                                            </li>
+                                            <li>Fine-tuning de modèles de langage (LLMs) sur des tâches spécifiques à
+                                                l’entreprise, en intégrant des techniques avancées de NLP.</li>
+                                            <li>Mise en place de pipelines CI/CD pour l’industrialisation et le
+                                                déploiement fluide des modèles en production.</li>
+                                            <li>Optimisation des performances et de la scalabilité des systèmes via le
+                                                cloud computing et des architectures distribuées.</li>
+                                            <li>Pilote de la mise en conformité et de la sécurité des systèmes selon le
+                                                standard <strong>SOC 2</strong>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Boutons -->
+                        <div class="flex justify-between mt-6 px-6">
+                            <button onclick="prevSlide()"
+                                class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Précédent</button>
+                            <button onclick="nextSlide()"
+                                class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Suivant</button>
+                        </div>
+                    </div>
+
+                    <script>
+                        let currentSlide = 0;
+                        const totalSlides = 4;
+                        const carouselInner = document.getElementById("carousel-inner");
+
+                        function updateSlide() {
+                            carouselInner.style.transform = `translateX(-${100 * currentSlide}%)`;
+                        }
+
+                        function nextSlide() {
+                            currentSlide = (currentSlide + 1) % totalSlides;
+                            updateSlide();
+                        }
+
+                        function prevSlide() {
+                            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                            updateSlide();
+                        }
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-100 via-white to-indigo-200 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-3xl font-semibold mb-6 text-center text-indigo-700">Compétences à Valoriser</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xl text-gray-700">
+
+                    <div class="p-4 bg-indigo-100 rounded-xl text-left">🛠 <strong>Analyse des besoins et conception de
+                            solutions</strong><br>
+                        Identification des besoins métier et élaboration de solutions technologiques adaptées.<br>
+                        <a href="https://www.francecompetences.fr/recherche/rncp/35713/"
+                            class="text-indigo-700 underline" target="_blank">
+                            RNCP35713 – Ingénieur ENSEEIHT (INP Toulouse) – Bloc BC04
+                        </a>
+                    </div>
+
+                    <div class="p-4 bg-indigo-100 rounded-xl text-left">🛠 <strong>Analyser un questionnement en
+                            utilisant les concepts de gestion</strong><br>
+                        Maîtrise des outils de pilotage (gestion, contrôle, planification) et de coordination de
+                        projets.<br>
+                        <a href="https://www.francecompetences.fr/recherche/rncp/39018/"
+                            class="text-indigo-700 underline" target="_blank">
+                            RNCP39018 – Licence Économie-Gestion – Bloc BC06
+                        </a>
+                    </div>
+
+                    <div class="p-4 bg-indigo-100 rounded-xl text-left">🛠 <strong>Compétences transversales en gestion
+                            d'entreprise</strong><br>
+                        Application des outils de gestion, fiscalité, logistique, ressources humaines et droit
+                        social.<br>
+                        <a href="https://www.francecompetences.fr/recherche/rncp/39018/"
+                            class="text-indigo-700 underline" target="_blank">
+                            RNCP39018 – Licence Économie-Gestion – Bloc BC08
+                        </a>
+                    </div>
+
+                    <div class="p-4 bg-indigo-100 rounded-xl text-left">🛠 <strong>Traitement de données massives et
+                            calcul intensif</strong><br>
+                        Compétences en HPC, Big Data et NLP pour développer des solutions IA à fort volume de
+                        données.<br>
+                        <a href="https://www.francecompetences.fr/recherche/rncp/35713/"
+                            class="text-indigo-700 underline" target="_blank">
+                            RNCP35713 – Ingénieur ENSEEIHT (INP Toulouse) – Bloc BC06
+                        </a>
+                    </div>
+
+                    <div class="p-4 bg-green-100 rounded-xl text-left">💬 <strong>Leadership et gestion
+                            d'équipe</strong><br>
+                        Animation de réunions, prise de décision collective, gestion de dynamiques d'équipe en contexte
+                        agile et interdisciplinaire.
+                    </div>
+
+                    <div class="p-4 bg-green-100 rounded-xl text-left">💬 <strong>Autonomie et esprit
+                            d’initiative</strong><br>
+                        Organisation du travail, gestion du temps, capacité à entreprendre et à structurer des projets
+                        de bout en bout.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projet"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-50 via-white to-indigo-100 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full space-y-8">
+                <h2 class="text-3xl font-semibold text-center text-indigo-700">Projet Professionnel & Perspectives</h2>
+                <p class="text-xl text-gray-700">
+                <ul class="list-disc list-inside space-y-2 text-lg text-gray-800 dark:text-white">
+                    <li>Grâce à mon parcours hybride en ingénierie numérique (spécialisation HPC, Big Data, NLP) et en
+                        économie-gestion (licence à l’Université Paris-Saclay), je développe une vision transversale des
+                        projets technologiques, alliant rigueur scientifique, innovation technique et compréhension des
+                        enjeux économiques et stratégiques de l’entreprise.
+                    </li>
+                    <li>Mon projet professionnel se construit à l’intersection de la data science avancée (LLM, RAG,
+                        MLOps)
+                        et du pilotage stratégique de projets technologiques. Je souhaite continuer à évoluer dans des
+                        environnements où la technologie sert des objectifs métier clairs, en contribuant à la création
+                        de
+                        valeur mesurable.
+                    </li>
+                    <li>À moyen terme, je me projette dans un rôle de Data & AI Manager, avec l’ambition de piloter des
+                        produits fondés sur l’intelligence artificielle, en particulier autour des modèles de langage,
+                        de la RAG et des infrastructures MLOps. Ce poste me permettrait d’articuler vision
+                        technologique, enjeux métier et contraintes de mise en production, tout en contribuant à la
+                        structuration des équipes et à la conformité des solutions déployées. À plus long terme, je
+                        souhaite mettre cette expertise au service d’un projet entrepreneurial, en créant une structure
+                        à l’intersection de l’IA et des besoins stratégiques des entreprises, avec une approche
+                        responsable, durable et orientée impact.
+                    </li>
+                    </p>
+
+                    <div
+                        class="mt-6 bg-indigo-100 dark:bg-gray-700 p-6 rounded-xl shadow text-gray-800 dark:text-white">
+                        <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Compétences à acquérir
+                            et formations envisagées</h3>
+                        <ul class="list-disc list-inside space-y-2 text-lg">
+                            <li>Développer mes compétences en leadership et gestion d’équipes (formations en management
+                                stratégique)</li>
+                            <li>Formations dans le domaine de l'entrepreneuriat</li>
+                            <li>Certifications dans le domaine du cloud (AWS Solutions Architect)</li>
+                        </ul>
+                    </div>
+            </div>
+        </section>
+
+        <section id="conclusion"
+            class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-indigo-100 via-white to-indigo-200 p-10 transition duration-700 ease-in-out">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-3xl font-semibold mb-4 text-center text-indigo-700">Conclusion</h2>
+                <p class="text-left text-xl leading-relaxed text-gray-700">
+                    Mon parcours hybride entre ingénierie numérique et économie-gestion m’a permis de développer une
+                    approche globale, à la fois technique et stratégique, des projets technologiques. Je souhaite
+                    aujourd’hui valoriser cette double compétence en pilotant des initiatives innovantes à fort impact,
+                    tout en continuant à apprendre et à faire évoluer mes pratiques. <br><br>
+                    Porté par une forte appétence pour le travail en équipe, la transmission et la construction
+                    collective, je m’inscris dans une dynamique d’engagement durable, orientée vers la création de
+                    valeur, la structuration des organisations et, à long terme, l’entrepreneuriat. C’est dans cet
+                    esprit que je souhaite construire la suite de mon parcours professionnel.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
